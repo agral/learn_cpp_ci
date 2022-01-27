@@ -18,3 +18,11 @@ jobs:
          mkdir build
          cd build
          cmake ..
+     - name: invoke make
+       run: |
+         cd build
+         make
+     - name: run test_FriendlyCode
+       run: |
+         cd build
+         ./test_FriendlyCode
