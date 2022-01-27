@@ -7,11 +7,13 @@ on:
     branches: [main]
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: invoke_cmake
+    uses: actions/checkout@v2
+    - name: cmake
     run: mkdir build && cd build && cmake ..
-    - name: invoke_tests
+    - name: make
+    run: cd build && make
+    - name: Run googletest
     run: cd build && ./test_FriendlyCode
