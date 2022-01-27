@@ -1,0 +1,17 @@
+name: C++ CI action demo
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: invoke_cmake
+    run: mkdir build && cd build && cmake ..
+    - name: invoke_tests
+    run: cd build && ./test_FriendlyCode
