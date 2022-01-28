@@ -10,3 +10,11 @@ TEST(FriendlyTests, std_string_equality_test)
   EXPECT_TRUE(strAlice == strAlice2);
   EXPECT_FALSE(strAlice == strBob);
 }
+
+
+TEST(FriendlyTests, failing_test)
+{
+  EXPECT_TRUE(24 == 42);
+}
+
+
